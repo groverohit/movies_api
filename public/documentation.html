@@ -14,5 +14,90 @@
         movies. They can sign up, log in and save their favorite movies.
       </p>
     </div>
+    <div>
+      <ul style="list-style: none">
+        <li><h1>1. Get data of all movies</h1></li>
+        <li><p>Description: Return data of all movies</p></li>
+        <li><p>URL: http://localhost:8080/movies</p></li>
+        <li><p>Method Type: GET</p></li>
+        <li><p>Query Parameters: none</p></li>
+        <li><p>Request Format: N/A</p></li>
+        <li><p>Response Format: json</p></li>
+
+        <li><h1>2. Get data of a movie</h1></li>
+        <li><p>Description: Return data of a movies</p></li>
+        <li><p>URL: http://localhost:8080/movies/:title</p></li>
+        <li><p>Method Type: GET</p></li>
+        <li><p>Query Parameters: Title of the movie</p></li>
+        <li><p>Request Format: N/A</p></li>
+        <li><p>Response Format: json</p></li>
+
+        <li><h1>3. Get data of movies by genre</h1></li>
+        <li><p>Description: Return data of movies by genre</p></li>
+        <li><p>URL: http://localhost:8080/movies/genre/:genre</p></li>
+        <li><p>Method Type: GET</p></li>
+        <li><p>Query Parameters: Genre name</p></li>
+        <li><p>Request Format: N/A</p></li>
+        <li><p>Response Format: json</p></li>
+
+        <li><h1>4. Get data of movies by director</h1></li>
+        <li><p>Description: Return data of movies by director</p></li>
+        <li><p>URL: http://localhost:8080/movies/director/:director</p></li>
+        <li><p>Method Type: GET</p></li>
+        <li><p>Query Parameters: Director name</p></li>
+        <li><p>Request Format: N/A</p></li>
+        <li><p>Response Format: json</p></li>
+
+        <li><h1>5. Register a user</h1></li>
+        <li><p>Description: Register a user</p></li>
+        <li><p>URL: http://localhost:8080/users</p></li>
+        <li><p>Method Type: POST</p></li>
+        <li><p>Query Parameters: none</p></li>
+        <li>
+          <p>
+            Request Format: json - Example - {name: 'Barrack Obama', username:
+            'bobama123', password: 'xxx', dob: '01/01/2000'}
+          </p>
+        </li>
+        <li><p>Response Format: json</p></li>
+
+        <li><h1>6. Update user info</h1></li>
+        <li><p>Description: Update information of user</p></li>
+        <li><p>URL: http://localhost:8080/users/update/:username</p></li>
+        <li><p>Method Type: PUT</p></li>
+        <li><p>Query Parameters: username</p></li>
+        <li>
+          <p>
+            Request Format: json - Example - {name: 'Barrack Obama', username:
+            'bobama123', password: 'xxx', dob: '01/01/2000'}
+          </p>
+        </li>
+        <li><p>Response Format: json</p></li>
+
+        <li><h1>7. Add movie as favorite</h1></li>
+        <li><p>Description: Add a specific movie as favorite</p></li>
+        <li><p>URL: http://localhost:8080/users/addfav/:username/:title</p></li>
+        <li><p>Method Type: PUT</p></li>
+        <li><p>Query Parameters: Title, username</p></li>
+        <li><p>Request Format: N/A</p></li>
+        <li><p>Response Format: json</p></li>
+
+        <li><h1>8. Remove movie as favorite</h1></li>
+        <li><p>Description: Remove a movie as favorite</p></li>
+        <li><p>URL: http://localhost:8080/users/remfav/:username/:title</p></li>
+        <li><p>Method Type: PUT</p></li>
+        <li><p>Query Parameters: Title, username</p></li>
+        <li><p>Request Format: N/A</p></li>
+        <li><p>Response Format: json</p></li>
+
+        <li><h1>9. Deregister user</h1></li>
+        <li><p>Description: Deregister a user</p></li>
+        <li><p>URL: http://localhost:8080//users/:username</p></li>
+        <li><p>Method Type: DELETE</p></li>
+        <li><p>Query Parameters: username</p></li>
+        <li><p>Request Format: N/A</p></li>
+        <li><p>Response Format: json</p></li>
+      </ul>
+    </div>
   </body>
 </html>
