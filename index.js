@@ -38,21 +38,17 @@ app.get('/', (req, res) => {
 });
 
 //Get list of movies with authentication
-app.get(
-  '/movies',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
-    //res.json(topmovies);
-    Movies.find()
-      .then(movies => {
-        res.status(201).json(movies);
-      })
-      .catch(err => {
-        console.error(err);
-        res.status(500).send('Error: ' + err);
-      });
-  }
-);
+app.get('/movies', (req, res) => {
+  //res.json(topmovies);
+  Movies.find()
+    .then(movies => {
+      res.status(201).json(movies);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+});
 
 //Get data about a movie using authentication
 app.get(
