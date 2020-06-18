@@ -21,10 +21,10 @@ const { check, validationResult } = require('express-validator');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-/*mongoose.connect('mongodb://localhost:27017/myFlixDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});*/
+// mongoose.connect('mongodb://localhost:27017/myFlixDB', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
 
 mongoose.connect(process.env.CONNECTION_URI, {
   useNewUrlParser: true,
@@ -38,17 +38,49 @@ app.get('/', (req, res) => {
 });
 
 //Get list of movies with authentication
-app.get('/movies', (req, res) => {
-  //res.json(topmovies);
-  Movies.find()
-    .then(movies => {
-      res.status(201).json(movies);
+app.get(
+  '/movies',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    //res.json(topmovies);
+    Movies.find()
+      .then(movies => {
+        res.status(201).json(movies);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      });
+  }
+);
+
+//Get list of users
+app.get('/users', (req, res) => {
+  Users.find()
+    .then(users => {
+      res.status(201).json(users);
     })
     .catch(err => {
       console.error(err);
       res.status(500).send('Error: ' + err);
     });
 });
+
+//Get a user by Username
+app.get(
+  '/users/:Username',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Users.findOne({ Username: req.params.Username })
+      .then(user => {
+        res.json(user);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      });
+  }
+);
 
 //Get data about a movie using authentication
 app.get(
@@ -61,7 +93,7 @@ app.get(
       })
       .catch(err => {
         console.error(err);
-        res.ststus(500).send('Error: ' + err);
+        res.status(500).send('Error: ' + err);
       });
   }
 );
@@ -242,7 +274,7 @@ const port = process.env.PORT || 8080;
 app.listen(port, '0.0.0.0', () => {
   console.log('Listening on port ' + port);
 });
-//app.listen(8080, () => console.log('Your app is listening on port 8080.'));
+// app.listen(8080, () => console.log('Your app is listening on port 8080.'));
 
 app.use(express.static('public'));
 
