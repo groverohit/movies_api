@@ -6,6 +6,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./registration-view.scss";
 
+import { Link } from "react-router-dom";
+
 export function RegistrationView(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -27,16 +29,17 @@ export function RegistrationView(props) {
       .then((response) => {
         console.log(response);
         console.log(response.data);
+        window.open("/", "_self");
       })
       .catch((e) => console.log(e.response));
   };
 
-  const handleCancel = () => {
-    props.onRegistrationCancel();
-  };
+  // const handleCancel = () => {
+  //   props.onRegistrationCancel();
+  // };
 
   return (
-    <Form>
+    <Form style={{ width: "32rem" }}>
       <Form.Group controlId="formBasicUsername">
         <Form.Label>Username</Form.Label>
         <Form.Control
@@ -80,13 +83,15 @@ export function RegistrationView(props) {
       <Button variant="primary" type="submit" onClick={handleSubmit}>
         Submit
       </Button>
-      <Button variant="link" type="submit" onClick={handleCancel}>
-        Cancel
-      </Button>
+      <Link to={`/`}>
+        <Button variant="link" type="submit">
+          Cancel
+        </Button>
+      </Link>
     </Form>
   );
 }
 
-RegistrationView.propTypes = {
-  onRegistrationCancel: PropTypes.func.isRequired,
-};
+// RegistrationView.propTypes = {
+//   onRegistrationCancel: PropTypes.func.isRequired,
+// };
