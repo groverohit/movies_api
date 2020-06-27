@@ -38205,7 +38205,7 @@ function RegistrationView() {
     _axios.default.post("https://groverohit-movie-api.herokuapp.com/users", createdUser).then(function (response) {
       console.log(response);
       console.log(response.data);
-      window.open("/", "_self");
+      window.open("/client", "_self");
     }).catch(function (e) {
       return console.log(e.response);
     });
@@ -42536,7 +42536,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60645" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62449" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

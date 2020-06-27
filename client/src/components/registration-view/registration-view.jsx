@@ -29,7 +29,7 @@ export function RegistrationView() {
       .then((response) => {
         console.log(response);
         console.log(response.data);
-        window.open("/", "_self");
+        window.open("/client", "_self");
       })
       .catch((e) => console.log(e.response));
   };
