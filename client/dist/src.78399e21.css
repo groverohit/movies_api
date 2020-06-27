@@ -1,12 +1,31 @@
-.my-flix {
-  color: steelblue;
+a:hover {
+  color: #eee;
+}
+
+.favoriteMovies {
+  margin-left: 20px;
+}
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  height: 500px;
 }
 * {
   color: #e00;
 }
 
+button {
+  margin: 13px;
+}
+
 .btn-link {
   color: #e00;
+}
+
+.card {
+  margin: 1rem;
 }
 
 .card-title {
@@ -14,11 +33,13 @@
   color: #eee;
   font-size: 2rem;
   text-align: center;
+  height: 3rem;
 }
 
 .card-text {
   font-size: 1.5rem;
   text-align: left;
+  height: 8rem;
 }
 
 .card-body {
@@ -38,6 +59,20 @@
 
 .form-label {
   font-size: 1.5rem;
+}
+
+#cover {
+  position: relative;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  background-size: cover;
+  background: url("/movies.d3b3defd.jpg");
+  height: 100%;
+}
+
+.nav-link {
+  color: #eee;
 }
 
 /*# sourceMappingURL=/src.78399e21.css.map */

@@ -53,11 +53,11 @@ export class MovieView extends React.Component {
             <Card.Text>Director: {movie.Director.Name}</Card.Text>
           </Link>
           <Link to={`/`}>
-            <Button variant="primary">Back</Button>
+            <Button variant="primary">Home</Button>
           </Link>
-          <Button variant="link" onClick={() => this.addFavorite(movie)}>
+          {/* <Button variant="link" onClick={() => this.addFavorite(movie)}>
             Add Favorite
-          </Button>
+          </Button> */}
         </Card.Body>
       </Card>
     );
@@ -75,5 +75,4 @@ MovieView.propTypes = {
       Name: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
-  //   onBackClick: PropTypes.func.isRequired,
 };

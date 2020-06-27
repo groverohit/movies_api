@@ -8,7 +8,7 @@ import "./registration-view.scss";
 
 import { Link } from "react-router-dom";
 
-export function RegistrationView(props) {
+export function RegistrationView() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -34,12 +34,8 @@ export function RegistrationView(props) {
       .catch((e) => console.log(e.response));
   };
 
-  // const handleCancel = () => {
-  //   props.onRegistrationCancel();
-  // };
-
   return (
-    <Form style={{ width: "32rem" }}>
+    <Form style={{ width: "32rem", margin: "auto", textAlign: "center" }}>
       <Form.Group controlId="formBasicUsername">
         <Form.Label>Username</Form.Label>
         <Form.Control
@@ -91,7 +87,3 @@ export function RegistrationView(props) {
     </Form>
   );
 }
-
-// RegistrationView.propTypes = {
-//   onRegistrationCancel: PropTypes.func.isRequired,
-// };
