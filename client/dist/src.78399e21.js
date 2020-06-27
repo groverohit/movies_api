@@ -38515,7 +38515,7 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
         }
       }).then(function (response) {
         console.log(response);
-        window.open("/", "_self");
+        window.open("/client", "_self");
       });
     }
   }, {
@@ -39021,7 +39021,7 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
 
       localStorage.removeItem("token"); // localStorage.removeItem("user");
 
-      window.open("/", "_self");
+      window.open("/client", "_self");
     }
   }, {
     key: "render",
@@ -39221,7 +39221,7 @@ var MovieCard = /*#__PURE__*/function (_React$Component) {
         }
       }).then(function (response) {
         console.log(response);
-        window.open("/", "_self");
+        window.open("/client", "_self");
       });
     }
   }, {
@@ -39309,7 +39309,7 @@ function MoviesList(props) {
 
   if (visibilityFilter !== "") {
     filteredMovies = movies.filter(function (m) {
-      return m.Title.toLocaleLowerCase().includes(visibilityFilter);
+      return m.Title.toLocaleLowerCase().includes(visibilityFilter.toLocaleLowerCase());
     });
   }
 
@@ -39415,9 +39415,9 @@ function UpdateView(props) {
       var data = response.data; // console.log(data);
 
       localStorage.setItem("user", data.Username);
-      props.setUsername(data.Username); // window.open(`/`, "_self");
-
+      props.setUsername(data.Username);
       alert("Your profile data was updated successfully");
+      window.open("/client", "_self");
     }).catch(function (e) {
       console.log(e);
     });
@@ -42199,7 +42199,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
     value: function logout() {
       localStorage.removeItem("token");
       localStorage.removeItem("user");
-      window.open("/", "_self");
+      window.open("/client", "_self");
     } // onRegistration() {
     //   this.setState({ register: true });
     // }
@@ -42218,7 +42218,9 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       if (!movies) return _react.default.createElement("div", {
         className: "main-view"
       });
-      return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_Navbar.default, {
+      return _react.default.createElement(_reactRouterDom.BrowserRouter, {
+        basename: "/client"
+      }, _react.default.createElement(_Navbar.default, {
         bg: "dark",
         expand: "lg"
       }, _react.default.createElement(_Navbar.default.Brand, {
@@ -42259,7 +42261,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         exact: true,
         path: "/users/",
         render: function render() {
-          return window.open("/", "_self");
+          return window.open("/client", "_self");
         }
       }), _react.default.createElement(_reactRouterDom.Route, {
         exact: true,
@@ -42534,7 +42536,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51459" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60645" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

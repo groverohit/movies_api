@@ -25,7 +25,7 @@ export class MovieCard extends React.Component {
       })
       .then((response) => {
         console.log(response);
-        window.open("/", "_self");
+        window.open("/client", "_self");
       });
   }
 

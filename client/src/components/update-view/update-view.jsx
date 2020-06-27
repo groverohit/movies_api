@@ -36,8 +36,8 @@ function UpdateView(props) {
         // console.log(data);
         localStorage.setItem("user", data.Username);
         props.setUsername(data.Username);
-        // window.open(`/`, "_self");
         alert("Your profile data was updated successfully");
+        window.open("/client", "_self");
       })
       .catch((e) => {
         console.log(e);

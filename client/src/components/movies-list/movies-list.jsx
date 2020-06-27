@@ -21,7 +21,7 @@ function MoviesList(props) {
 
   if (visibilityFilter !== "") {
     filteredMovies = movies.filter((m) =>
-      m.Title.toLocaleLowerCase().includes(visibilityFilter)
+      m.Title.toLocaleLowerCase().includes(visibilityFilter.toLocaleLowerCase())
     );
   }
 

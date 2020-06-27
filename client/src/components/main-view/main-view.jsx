@@ -85,7 +85,7 @@ export class MainView extends React.Component {
   logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    window.open("/", "_self");
+    window.open("/client", "_self");
   }
 
   // onRegistration() {
@@ -102,7 +102,7 @@ export class MainView extends React.Component {
     if (!movies) return <div className="main-view" />;
 
     return (
-      <Router>
+      <Router basename="/client">
         <Navbar bg="dark" expand="lg">
           <Navbar.Brand as={Link} to="/">
             myFlix Movies
@@ -149,7 +149,7 @@ export class MainView extends React.Component {
           <Route
             exact
             path="/users/"
-            render={() => window.open("/", "_self")}
+            render={() => window.open("/client", "_self")}
           />
           <Route exact path="/register" render={() => <RegistrationView />} />
           <Route
