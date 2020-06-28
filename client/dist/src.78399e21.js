@@ -38205,9 +38205,11 @@ function RegistrationView() {
     _axios.default.post("https://groverohit-movie-api.herokuapp.com/users", createdUser).then(function (response) {
       console.log(response);
       console.log(response.data);
+      alert("User created successfully");
       window.open("/client", "_self");
     }).catch(function (e) {
-      return console.log(e.response);
+      console.log(e.response);
+      alert("Error processing request");
     });
   };
 
@@ -38992,6 +38994,8 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "removeFavorite",
     value: function removeFavorite(movie) {
+      var _this3 = this;
+
       var token = localStorage.getItem("token");
 
       var url = "https://groverohit-movie-api.herokuapp.com/users/" + localStorage.getItem("user") + "/Movies/" + movie._id;
@@ -39002,6 +39006,8 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
         }
       }).then(function (response) {
         console.log(response);
+
+        _this3.componentDidMount();
       });
     }
   }, {
@@ -39026,12 +39032,12 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       var movies = this.props.movies; // this.getUser(localStorage.getItem("token"));
 
       var favoriteMovieList = movies.filter(function (movie) {
-        return _this3.state.favoriteMovies.includes(movie._id);
+        return _this4.state.favoriteMovies.includes(movie._id);
       }); // console.log(favoriteMovieList);
 
       if (!movies) alert("Please sign in");
@@ -39063,7 +39069,7 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
       }, "Edit")), _react.default.createElement(_Button.default, {
         variant: "danger",
         onClick: function onClick() {
-          return _this3.handleDelete();
+          return _this4.handleDelete();
         }
       }, "Delete User"), _react.default.createElement(_reactRouterDom.Link, {
         to: "/"
@@ -39084,7 +39090,7 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
           to: "/movies/".concat(movie._id)
         }, _react.default.createElement(_Card.default.Title, null, movie.Title)))), _react.default.createElement(_Button.default, {
           onClick: function onClick() {
-            return _this3.removeFavorite(movie);
+            return _this4.removeFavorite(movie);
           }
         }, "Remove"));
       }))))));
@@ -42536,7 +42542,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62449" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64412" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

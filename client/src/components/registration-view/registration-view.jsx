@@ -29,9 +29,13 @@ export function RegistrationView() {
       .then((response) => {
         console.log(response);
         console.log(response.data);
+        alert("User created successfully");
         window.open("/client", "_self");
       })
-      .catch((e) => console.log(e.response));
+      .catch((e) => {
+        console.log(e.response);
+        alert("Error processing request");
+      });
   };
 
   return (
