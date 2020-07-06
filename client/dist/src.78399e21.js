@@ -42240,7 +42240,8 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         to: "/users/".concat(user)
       }, "Profile"), _react.default.createElement("a", {
         className: "nav-link",
-        href: "https://groverohit.github.io/portfolio-website/index.html"
+        href: "https://groverohit.github.io/portfolio-website/index.html",
+        target: "_blank"
       }, "About Developer"), _react.default.createElement(_Nav.default, {
         className: "ml-auto"
       }, _react.default.createElement(_Button.default, {
@@ -42542,7 +42543,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64412" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59430" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

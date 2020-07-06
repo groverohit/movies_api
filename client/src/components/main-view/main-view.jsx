@@ -118,6 +118,7 @@ export class MainView extends React.Component {
           <a
             className="nav-link"
             href="https://groverohit.github.io/portfolio-website/index.html"
+            target="_blank"
           >
             About Developer
           </a>
