@@ -14,6 +14,15 @@ export function RegistrationView() {
   const [email, setEmail] = useState("");
   const [dob, setDob] = useState("");
 
+  /**
+   * Register a new user
+   * @function handleSubmit
+   * @axios
+   * @param {string} username
+   * @param {string} password
+   * @param {string} email
+   * @param {date} dob
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
 

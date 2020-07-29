@@ -15,6 +15,11 @@ export class MovieView extends React.Component {
     this.state = {};
   }
 
+  /**
+   * Adds a movie to list of user´s favorites
+   * @function addFavorite
+   * @axios
+   */
   addFavorite(movie) {
     let token = localStorage.getItem("token");
     let url =

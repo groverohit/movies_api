@@ -1,4 +1,32 @@
-import React, { useState } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: profile-view.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: profile-view.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -47,8 +75,8 @@ export class ProfileView extends React.Component {
     //   day = "" + d.getDate(),
     //   year = d.getFullYear();
 
-    // if (month.length < 2) month = "0" + month;
-    // if (day.length < 2) day = "0" + day;
+    // if (month.length &lt; 2) month = "0" + month;
+    // if (day.length &lt; 2) day = "0" + day;
 
     // return [year, month, day].join("-");
     return date;
@@ -158,43 +186,43 @@ export class ProfileView extends React.Component {
 
     if (!movies) alert("Please sign in");
     return (
-      <div className="userProfile" style={{ display: "flex" }}>
-        <Container>
-          <Row>
-            <Col>
-              <Form style={{ width: "36rem", float: "left" }}>
-                <h1 style={{ textAlign: "center" }}>Profile Details</h1>
-                <Form.Group controlId="formBasicUsername">
-                  <h3>Username: </h3>
-                  <Form.Label>{this.state.username}</Form.Label>
-                </Form.Group>
-                <Form.Group controlId="formBasicEmail">
-                  <h3>Email:</h3>
-                  <Form.Label>{this.state.email}</Form.Label>
-                </Form.Group>
-                <Form.Group controlId="formBasicDate">
-                  <h3>Date of Birth:</h3>
-                  <Form.Label>{this.state.dob}</Form.Label>
-                </Form.Group>
+      &lt;div className="userProfile" style={{ display: "flex" }}>
+        &lt;Container>
+          &lt;Row>
+            &lt;Col>
+              &lt;Form style={{ width: "36rem", float: "left" }}>
+                &lt;h1 style={{ textAlign: "center" }}>Profile Details&lt;/h1>
+                &lt;Form.Group controlId="formBasicUsername">
+                  &lt;h3>Username: &lt;/h3>
+                  &lt;Form.Label>{this.state.username}&lt;/Form.Label>
+                &lt;/Form.Group>
+                &lt;Form.Group controlId="formBasicEmail">
+                  &lt;h3>Email:&lt;/h3>
+                  &lt;Form.Label>{this.state.email}&lt;/Form.Label>
+                &lt;/Form.Group>
+                &lt;Form.Group controlId="formBasicDate">
+                  &lt;h3>Date of Birth:&lt;/h3>
+                  &lt;Form.Label>{this.state.dob}&lt;/Form.Label>
+                &lt;/Form.Group>
                 {
-                  <Link to={`/update/${this.state.username}`}>
-                    <Button variant="primary" type="link">
+                  &lt;Link to={`/update/${this.state.username}`}>
+                    &lt;Button variant="primary" type="link">
                       Edit
-                    </Button>
-                  </Link>
+                    &lt;/Button>
+                  &lt;/Link>
                 }
-                <Button variant="danger" onClick={() => this.handleDelete()}>
+                &lt;Button variant="danger" onClick={() => this.handleDelete()}>
                   Delete User
-                </Button>
-                <Link to={`/`}>
-                  <Button variant="light" type="submit">
+                &lt;/Button>
+                &lt;Link to={`/`}>
+                  &lt;Button variant="light" type="submit">
                     Back
-                  </Button>
-                </Link>
-              </Form>
-            </Col>
-            <Col>
-              <div
+                  &lt;/Button>
+                &lt;/Link>
+              &lt;/Form>
+            &lt;/Col>
+            &lt;Col>
+              &lt;div
                 className="favoriteMovies"
                 style={{
                   float: "right",
@@ -202,28 +230,28 @@ export class ProfileView extends React.Component {
                   width: "28rem",
                 }}
               >
-                <h1>Favorite Movies</h1>
+                &lt;h1>Favorite Movies&lt;/h1>
                 {favoriteMovieList.map((movie) => {
                   return (
-                    <div key={movie._id}>
-                      <Card>
-                        <Card.Body>
-                          <Link to={`/movies/${movie._id}`}>
-                            <Card.Title>{movie.Title}</Card.Title>
-                          </Link>
-                        </Card.Body>
-                      </Card>
-                      <Button onClick={() => this.removeFavorite(movie)}>
+                    &lt;div key={movie._id}>
+                      &lt;Card>
+                        &lt;Card.Body>
+                          &lt;Link to={`/movies/${movie._id}`}>
+                            &lt;Card.Title>{movie.Title}&lt;/Card.Title>
+                          &lt;/Link>
+                        &lt;/Card.Body>
+                      &lt;/Card>
+                      &lt;Button onClick={() => this.removeFavorite(movie)}>
                         Remove
-                      </Button>
-                    </div>
+                      &lt;/Button>
+                    &lt;/div>
                   );
                 })}
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+              &lt;/div>
+            &lt;/Col>
+          &lt;/Row>
+        &lt;/Container>
+      &lt;/div>
     );
   }
 }
@@ -233,3 +261,26 @@ ProfileView.propTypes = {
 };
 
 export default connect(null, { setUsername })(ProfileView);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addFavorite">addFavorite</a></li><li><a href="global.html#getMovies">getMovies</a></li><li><a href="global.html#getUser">getUser</a></li><li><a href="global.html#handleDelete">handleDelete</a></li><li><a href="global.html#handleSubmit">handleSubmit</a></li><li><a href="global.html#handleUpdate">handleUpdate</a></li><li><a href="global.html#logout">logout</a></li><li><a href="global.html#MoviesList">MoviesList</a></li><li><a href="global.html#onLoggedIn">onLoggedIn</a></li><li><a href="global.html#removeFavorite">removeFavorite</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Tue Jul 28 2020 17:52:26 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

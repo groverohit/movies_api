@@ -23,6 +23,13 @@ function LoginView(props) {
 
   // const { user } = props;
 
+  /**
+   * posting username and password to /login
+   * @function handleSubmit
+   * @param {event}
+   * @return {object} User information
+   */
+
   const handleSubmit = (e) => {
     // console.log("submit");
     // console.log(username, password);

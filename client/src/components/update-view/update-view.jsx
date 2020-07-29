@@ -13,6 +13,15 @@ function UpdateView(props) {
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
 
+  /**
+   * Update user details
+   * @function handleUpdate
+   * @axios
+   * @param {string} username
+   * @param {string} password
+   * @param {string} email
+   * @param {date} birthday
+   */
   const handleUpdate = (e) => {
     e.preventDefault();
     const url =
